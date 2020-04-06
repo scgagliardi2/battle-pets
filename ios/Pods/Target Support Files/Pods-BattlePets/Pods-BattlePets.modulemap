@@ -1,0 +1,6 @@
+module Pods_BattlePets {
+  umbrella header "Pods-BattlePets-umbrella.h"
+
+  export *
+  module * { export * }
+}
