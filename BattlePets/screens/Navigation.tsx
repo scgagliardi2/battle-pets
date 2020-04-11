@@ -24,7 +24,7 @@ export default class Navigation extends React.Component<Props, State> {
                 <View style={styles.column}>
                     <NavButton title='BattleScreen' onPress={() => this.props.onNavigate('BattleScreen')}/>
                     <NavButton title='MapScreen' onPress={() => this.props.onNavigate('MapScreen')}/>
-                    <NavButton title='BattleScreen' onPress={() => this.props.onNavigate('BattleScreen')}/>
+                    <NavButton title='HUD' onPress={() => this.props.onNavigate('HUD')}/>
                     <NavButton title='BattleScreen' onPress={() => this.props.onNavigate('BattleScreen')}/>
                 </View>
                 <View style={styles.column}>

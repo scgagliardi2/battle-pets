@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import NavButton from '../components/NavButton';
-import MapView from 'react-native-maps';
 
 interface Props {
     onNavigate: (screen: String) => any,
@@ -10,7 +9,7 @@ interface Props {
 interface State {
 }
 
-export default class MapScreen extends React.Component<Props, State> {
+export default class HUD extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
@@ -22,16 +21,6 @@ export default class MapScreen extends React.Component<Props, State> {
     render() {
         return (
             <View style={styles.screen}>
-                <MapView 
-                    style={styles.mapStyle} 
-                    region={{
-                        latitude: 42.882004,
-                        longitude: 74.582748,
-                        latitudeDelta: 0.0992,
-                        longitudeDelta: 0.0421
-                    }}
-                    showsUserLocation={true}
-                />
                 <NavButton title="Nav Menu" onPress={() => this.props.onNavigate('Navigation')}/>
             </View> 
         );
@@ -40,12 +29,9 @@ export default class MapScreen extends React.Component<Props, State> {
 
 const styles = StyleSheet.create({
     screen: {
-        position: 'absolute',
+        flex: 1,
         padding: 40,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    mapStyle: {
-        flex: 1,
     },
 });

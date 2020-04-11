@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import Navigation from './screens/Navigation';
 import BattleScreen from './screens/BattleScreen';
 import MapScreen from './screens/MapScreen';
+import HUD from './components/HUD';
 
 interface Props {
 
@@ -44,6 +45,10 @@ export default class App extends React.Component<Props, State> {
           return (
             <MapScreen onNavigate={this.changeScreen}/>
           );
+        case 'HUD':
+            return (
+                <HUD onNavigate={this.changeScreen}/>
+            );
     };
   }
 }
