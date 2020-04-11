@@ -23,16 +23,18 @@ export default class MapScreen extends React.Component<Props, State> {
         return (
             <View style={styles.screen}>
                 <MapView 
-                    style={styles.mapStyle} 
-                    region={{
-                        latitude: 42.882004,
-                        longitude: 74.582748,
-                        latitudeDelta: 0.0992,
-                        longitudeDelta: 0.0421
-                    }}
-                    showsUserLocation={true}
+                style={styles.mapStyle} 
+                region={{
+                    latitude: 42.882004,
+                    longitude: 74.582748,
+                    latitudeDelta: 0.0992,
+                    longitudeDelta: 0.0421
+                }}
+                showsUserLocation={true}
                 />
-                <NavButton title="Nav Menu" onPress={() => this.props.onNavigate('Navigation')}/>
+                <View style={styles.navButtonCont}>
+                    <NavButton title="Nav Menu" onPress={() => this.props.onNavigate('Navigation')}/>
+                </View>
             </View> 
         );
     }
@@ -45,7 +47,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    mapStyle: {
+    navButtonCont: {
         flex: 1,
+    },
+    mapStyle: {
+        flex: 5,
     },
 });
