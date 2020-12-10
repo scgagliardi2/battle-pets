@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import NavButton from '../components/NavButton';
 
 interface Props {
     onNavigate: (screen: String) => any,
@@ -21,7 +20,7 @@ export default class HUD extends React.Component<Props, State> {
     render() {
         return (
             <View style={styles.screen}>
-                <NavButton title="Nav Menu" onPress={() => this.props.onNavigate('Navigation')}/>
+                <Text>HUD</Text>
             </View> 
         );
     }

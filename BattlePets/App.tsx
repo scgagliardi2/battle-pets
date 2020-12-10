@@ -7,7 +7,6 @@ import HUD from './components/HUD';
 import NavButton from './components/NavButton';
 
 interface Props {
-  onNavigate: (screen: String) => any,
 }
 
 interface State {
@@ -29,6 +28,7 @@ export default class App extends React.Component<Props, State> {
   }
   
   changeScreen(screen: string) {
+    this.setState({Content: screen});
     switch (screen) {
       case 'Navigation':
         this.setState({Display: <Navigation onNavigate={this.changeScreen}/>});
@@ -48,11 +48,11 @@ export default class App extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.screen}>
-        <View>
+        <View style={styles.display}>
           {this.state.Display}
         </View>
-        <View>
-          <NavButton title='Navigation' onPress={() => this.props.onNavigate('Navigation')}/>
+        <View style={styles.buttonContainer}>
+          <NavButton title='Nav Menu' onPress={() => this.changeScreen('Navigation')}/>
         </View>
       </View>
     );
@@ -65,6 +65,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
+  },
+  display: {
+    flex: 5,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
   },
 });
 
